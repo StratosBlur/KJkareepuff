@@ -4,6 +4,15 @@
   background-color: rgb(240, 190, 198)
 }
 
+.container {
+  padding-top: 2%;
+  padding-bottom: 50px;
+  background-color: white;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right:  auto;
+}
+
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   position: relative;
   width: 36px;
@@ -59,15 +68,6 @@
   color: #f39c12;
 }
 
-.home-content {
-  padding-top: 2%;
-  padding-bottom: 50px;
-  background-color: white;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right:  auto;
-}
-
 .footer-content {
   margin-top: 50px;
   padding-top: 20px;
@@ -83,7 +83,11 @@
 
 .text-content {
   padding-top: 2%;
-  padding-bottom: 2%
+  padding-bottom: 2%;
+}
+
+.product-preview {
+  margin-bottom: 10%;
 }
 
 /*Responsive*/
