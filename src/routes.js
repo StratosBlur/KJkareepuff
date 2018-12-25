@@ -3,7 +3,8 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './features/home'
 import Story from './features/story'
 import Register from './features/register';
-import Payment from './features/payment'
+import Payment from './features/payment';
+import Partner from './features/'
 const Routes = () => (
     <BrowserRouter>
       <Switch>
