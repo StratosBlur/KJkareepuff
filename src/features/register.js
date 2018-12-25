@@ -54,12 +54,12 @@ class Register extends React.Component {
                     className="form-control"
                     id="email"
                     name="email" 
-                    placeholder="อีเมลล์@คนไทย"
+                    placeholder="อีเมล@คน.ไทย"
                     value={this.state.email} 
                     onChange={this.handleChange}
                     />
-                    <label className="float-right">คุณมีอีเมลล์คนไทยแล้วหรือยัง
-                      <a href="#">ลงทะเบียนอีเมล@คนไทย</a>
+                    <label className="float-right">คุณมีอีเมลคน.ไทยแล้วหรือยัง
+                      <a href="#">ลงทะเบียนอีเมล@คน.ไทย</a>
                     </label>
             </div>
             <div className="form-group">
