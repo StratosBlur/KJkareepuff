@@ -1,4 +1,6 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Prompt:300');
+
 .App {
   text-align: center;
   background-color: rgb(240, 190, 198)
