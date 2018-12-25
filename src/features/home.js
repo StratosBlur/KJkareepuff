@@ -4,7 +4,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="home-content">
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12">
               <img src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/49005390_1356359704498822_5029149087182618624_n.png?_nc_cat=103
@@ -77,7 +76,6 @@ class Home extends React.Component {
                   className="img-fluid" alt="karee-img"/>
             </div>
           </div>
-        </div>
       </div>
     )
   }
