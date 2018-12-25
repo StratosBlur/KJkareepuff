@@ -22,7 +22,7 @@ class Navigator extends React.Component {
             <a className="nav-link" href="#">ทำธุรกิจกับเรา</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">เข้าสู่ระบบ</a>
+            <a className="nav-link" href="/login">เข้าสู่ระบบ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
