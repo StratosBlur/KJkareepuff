@@ -5,6 +5,7 @@ import Story from './features/story'
 import Register from './features/register';
 import Order from './features/order';
 import Payment from './features/payment'
+import Partner from './features/partner'
 const Routes = () => (
     <BrowserRouter>
       <Switch>
@@ -13,6 +14,7 @@ const Routes = () => (
         <Route path = "/order" component={Order} />
         <Route path = "/register" component={Register} />
         <Route path = "/payment" component={Payment} />
+        <Route path = "/partner" component={Partner}/>
       </Switch>
     </BrowserRouter>
 )

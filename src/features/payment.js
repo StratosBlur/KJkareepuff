@@ -10,14 +10,14 @@ class Payment extends React.Component {
             tel:null,
         }
     }
-    // async componentWillMount(){
-    //     await this.getProduct()
-    // }
-    // async getProduct(){
-    //     console.log('getProduct')
-    //     const res = await axios.get('http://currypuffapi.tk/api/products/all.php');
-    //     console.log(res.data);
-    // }
+    async componentWillMount(){
+        await this.getProduct()
+    }
+    async getProduct(){
+        console.log('getProduct')
+        const res = await axios.get('http://currypuffapi.tk/api/products/all.php');
+        console.log(res.data);
+    }
     render(){
         return(
             <div className="container">

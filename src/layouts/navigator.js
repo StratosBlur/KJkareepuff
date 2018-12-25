@@ -20,7 +20,7 @@ class Navigator extends React.Component {
             <a className="nav-link" href="#">โปรโมชั่น</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">ทำธุรกิจกับเรา</a>
+            <a className="nav-link" href="/partner">ทำธุรกิจกับเรา</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" data-toggle="modal" data-target="#loginModal">เข้าสู่ระบบ</a>
