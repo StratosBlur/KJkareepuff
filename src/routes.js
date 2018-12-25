@@ -1,6 +1,7 @@
 import React from 'react';
-import Home from './features/home'
-import Story from './features/story'
+import Home from './features/home';
+import Story from './features/story';
+import Order from './features/order';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 const Routes = () => (
@@ -8,6 +9,7 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path = "/story" component={Story} />
+        <Route path = "/order" component={Order} />
       </Switch>
     </BrowserRouter>
 )
