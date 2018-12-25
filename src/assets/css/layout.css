@@ -3,7 +3,9 @@
 
 .App {
   text-align: center;
-  background-color: rgb(240, 190, 198)
+  background-color: rgb(240, 190, 198);
+  font-family: 'Prompt', sans-serif;
+
 }
 
 .container {
@@ -19,13 +21,14 @@
   position: relative;
   width: 36px;
   font-size: 24px;
+
 }
 
 .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
   font-size: 0.75rem;
   position: absolute;
   right: 0;
-  font-family: sans-serif;
+  font-family: 'Prompt', sans-serif;
 }
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {

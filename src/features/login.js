@@ -14,10 +14,12 @@ class Login extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+    console.log(event.target.name)
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log("กดแล้วจ้า")
     // request response
     // if (response.status==200){
     //   do something here
@@ -27,34 +29,47 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="container">
-      <h3>สวัสดีค่ะ</h3>
-        <from>
-            
-            <div className="form-group">
-                   <input type="email" 
-                    className="form-control" 
-                    placeholder="อีเมลล์@คนไทย"
-                    value={this.state.email} 
-                    onChange={this.handleChange}
-                    />
+      <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal-dialog" role="document">
+        <div className="modal-content">
+          <div className="modal-header">
+            <div className="modal-title" id="exampleModalLabel">
+              <h5>สวัสดีค่ะ</h5>
+              <h7>กรุณาลงชื่อเข้าใช้งานเพื่อดำเนินการต่อ คุณมีบัญชีผู้ใช้งานหรือยัง? 
+              <a href="/register">สมัครสมาชิก</a>
+              </h7>
             </div>
-            <div className="form-group">
-                   <input type="password" 
-                    className="form-control" 
-                    placeholder="รหัสผ่าน"
-                    value={this.state.password} 
-                    onChange={this.handleChange}
-                    />
-            </div>
-           
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary btn-lg btn-block" 
-                onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
-              <lable className="float-right"><a href="#">ลืมรหัสผ่าน</a></lable>
-            </div>
-        </from>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div className="modal-body">
+            <form>
+              <div className="form-group">
+                <input type="email" 
+                  className="form-control" 
+                  id="email"
+                  placeholder="อีเมลล์@คนไทย"
+                  value={this.state.email} 
+                  onChange={this.handleChange}/>
+              </div>
+              <div class="form-group">
+                <input type="password" 
+                  className="form-control" 
+                  id="password"
+                  placeholder="รหัสผ่าน"
+                  value={this.state.password} 
+                  onChange={this.handleChange}/>
+              </div>
+            </form>
+          </div>
+          <div className="modal-footer">
+            <button type="button" class="btn btn-primary btn-lg btn-block" onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
+          </div>
+          <h6 className="float-right"><a href="#">ลืมรหัสผ่าน</a></h6>
+        </div>
       </div>
+    </div>
     );
   }
 }
