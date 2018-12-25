@@ -14,7 +14,7 @@ class Home extends React.Component {
           </div>
 
           <div className="row about-content">
-              <div className="col-lg-6 col-md-6 col-sm-12 ">
+              <div className="col-lg-6 col-md-6 col-sm-12 text-content ">
                 <img src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48966391_217629225839244_6526544312006606848_n.png?_nc_cat=111
                 &_nc_ht=scontent.fbkk7-2.fna&oh=f60686b8b5b505acb8b081d493947aa2&oe=5CCCA4A4" 
                 className="img-fluid" alt="About image"/>
@@ -50,7 +50,7 @@ class Home extends React.Component {
               <a href="#" className="btn btn-info" >เพิ่มเติม</a>
             </div>
 
-            <div className="col-lg-6 col-md-6 col-sm-6 order-first">
+            <div className="col-lg-6 col-md-6 col-sm-6 text-content order-first">
                 <img src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48966391_217629225839244_6526544312006606848_n.png?_nc_cat=111
                   &_nc_ht=scontent.fbkk7-2.fna&oh=f60686b8b5b505acb8b081d493947aa2&oe=5CCCA4A4" 
                   className="img-fluid" alt="About image"/>
