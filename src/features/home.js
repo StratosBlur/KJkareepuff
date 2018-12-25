@@ -31,7 +31,7 @@ class Home extends React.Component {
                   แฟ็กซ์ปัจเจกชน แกรนด์คันยิเอ็นเตอร์เทนต้าอ่วย 
                   เทคคันธาระ คีตราชันเวสต์แตงกวา</p>
                 <br/>
-                <a href="#" className="btn btn-info" >เพิ่มเติม</a>
+                <a href="/story" className="btn btn-info" >เพิ่มเติม</a>
               </div>
             </div>
 
