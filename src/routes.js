@@ -1,11 +1,21 @@
 import React from 'react';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './features/home'
-import { Route, BrowserRouter } from 'react-router-dom';
+import Story from './features/story'
+import Register from './features/register';
+import Login from './features/login';
+import Order from './features/order';
 
 const Routes = () => (
   <BrowserRouter>
-    <Route path="/" component={Home} />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/story" component={Story} />
+      <Route path="/order" component={Order} />
+      <Route path="/register" component={Register} />
+      <Route path="/login" component={Login} />
+    </Switch>
   </BrowserRouter>
-);
+)
 
 export default Routes;
