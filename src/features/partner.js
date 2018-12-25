@@ -1,13 +1,14 @@
 import React from 'react';
 import Login from './login'
-class Register extends React.Component {
+class Partner extends React.Component {
   constructor(){
       super()
       this.state = {
         name: null,
         email: null,
         password: null,
-        password2: null,
+        tel: null,
+        line: null
         
       }
       this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,7 +33,8 @@ class Register extends React.Component {
   render() {
     return (
       <div className="container">
-      <h3>สร้างบัญชีผู้ใช้ใหม่</h3>
+      <h3>มาร่วมธุรกิจกับเรา</h3>
+      <h4>ติดต่อเรา</h4>
         <from>
             <div className="form-group">
                    <input type="text" 
@@ -62,23 +64,25 @@ class Register extends React.Component {
                     />
             </div>
             <div className="form-group">
-                   <input type="password" 
+                   <input type="tel" 
                     className="form-control" 
-                    placeholder="ยืนยันรหัสผ่าน"
-                    value={this.state.password2} 
+                    placeholder="เบอร์โทร"
+                    value={this.state.tel} 
                     onChange={this.handleChange}
                     />
             </div>
             <div className="form-group">
-              <input type="checkbox" className="form-check-input"/>
-              <label>ในการสมัครสมาชิก คุณยอมรับในข้อตกลง 
-                  เงื่อนไข และนโยบาย ความเป็นส่วนตัวหรือไม่
-              </label>
+                   <input type="text" 
+                    className="form-control" 
+                    placeholder="ไลน์"
+                    value={this.state.line} 
+                    onChange={this.handleChange}
+                    />
             </div>
+            
             <div className="from-group">
               <button type="submit" className="btn btn-primary btn-lg btn-block" 
-                onClick={this.handleSubmit}>สร้างบัญชี</button>
-              <lable className="float-right">มีบัญชีอยู่แล้ว<a href="#" data-toggle="modal" data-target="#loginModal">เข้าสู่ระบบ</a></lable>
+                onClick={this.handleSubmit}>ยืนยัน</button>
             </div>
         </from>
         <Login/>
@@ -86,6 +90,6 @@ class Register extends React.Component {
     );
   }
 }
-export default Register;
+export default Partner;
 
 

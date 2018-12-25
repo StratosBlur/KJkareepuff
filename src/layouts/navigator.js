@@ -1,8 +1,9 @@
 import React from 'react';
+import Login from '../features/login'
 class Navigator extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="/">ขวัญใจกะหรี่ปั๊ป</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -19,18 +20,20 @@ class Navigator extends React.Component {
             <a className="nav-link" href="#">โปรโมชั่น</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">ทำธุรกิจกับเรา</a>
+            <a className="nav-link" href="/partner">ทำธุรกิจกับเรา</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/login">เข้าสู่ระบบ</a>
+            <a className="nav-link" data-toggle="modal" data-target="#loginModal">เข้าสู่ระบบ</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-                  <span class="fa fa-shopping-cart"></span> 
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+                  <span className="fa fa-shopping-cart"></span> 
             </a>
         </li>
         </ul>
         </div>
+        {/* Modal */}
+        <Login/>
       </nav>
     )
   }
