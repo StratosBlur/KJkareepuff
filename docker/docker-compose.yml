@@ -11,6 +11,6 @@ services:
     working_dir: /app
     command: >
      sh -c "rm -Rf build
-      && npm install
-      && yarn build
-      && serve -s build"
+     && npm install
+     && yarn build
+     && serve -s build"
