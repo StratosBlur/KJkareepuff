@@ -25,17 +25,14 @@ class Register extends React.Component {
 
   handleSubmit = async (event) => {
   
-    const customer = new URLSearchParams();
+    const customer = new FormData();
     customer.append('CustomerName', this.state.name);
     customer.append('CustomerEmail', this.state.email);
     customer.append('CustomerPhone', this.state.tel);
     customer.append(' CustomerPassword', this.state.password);
     customer.append(' CustomerPassword2', this.state.password2);
-    axios({
-      method: 'post',
-      url: 'http://currypuffapi.tk/api/customer/register.php',
-      data: customer
-    });
+    const res = await axios.post('http://currypuffapi.tk/api/customer/register.php', customer)
+    console.log(res.data)
   }  
 
   render() {

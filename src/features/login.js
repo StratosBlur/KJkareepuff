@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Login extends React.Component {
   constructor(){
@@ -11,7 +12,6 @@ class Login extends React.Component {
       this.handleChange = this.handleChange.bind(this)
   }
   handleChange(event) {
-    console.log(event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -20,10 +20,13 @@ class Login extends React.Component {
 
   handleSubmit = async(event) => {
     event.preventDefault();
-    
+    const customer = new FormData();
+    customer.append('CustomerEmail', this.state.email)
+    customer.append('CustomerPassword', this.state.password)
+    const res = await axios.post('http://currypuffapi.tk/api/customer/auth.php', customer)
+    console.log(res.data)
   }
   
-
   render() {
     return (
       <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -63,7 +66,8 @@ class Login extends React.Component {
               </form>
             </div>
             <div className="modal-footer">
-              <button type="button" class="btn btn-primary btn-lg btn-block" onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block" 
+                onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
             </div>
             <h6 className="float-right"><a href="#">ลืมรหัสผ่าน</a></h6>
         </div>
