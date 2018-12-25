@@ -29,8 +29,6 @@ class Login extends React.Component {
     return (
       <div className="container">
       <h3>สวัสดีค่ะ</h3>
-      <label>กรุณาลงชื่อเข้าใช้งาน เพื่อดำเนินการต่อ</label>
-      <label>คุณมีบัญชีผู้ใช้งานหรือยัง<a href="#"> สมัครสมาชิก</a></label>
         <from>
             
             <div className="form-group">
