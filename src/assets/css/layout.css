@@ -114,12 +114,49 @@
   margin-bottom: 20px;
 }
 
-/*checkbox image on order page*/
-.img-select{
-  height: 250px;
+.img-ordered-box {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-flavor {
+  height: 30px;
+  width: 200px;
+}
+
+.choosed-flavor {
+  background-color: #f3bb61;
+  border: 0.5px black;
+  padding: 10px;
   width: 250px;
-  border-radius:50px;
+  max-height: 80px;
+  margin-left:  auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.number-box {
+  height: 30px;
+  width: 200px;
+}
+
+.number-piece {
+  height: 30px;
+  width: 80px;
+}
+
+/*checkbox image on order page*/
+.img-style-select{
+  height: 60px;
+  width: 100px;
 } 
+
+.img-box-select {
+  height: 200px;
+  width: 200px;
+}
 
 .caption {
   position: absolute;
@@ -163,6 +200,7 @@
   border-radius: 50px;
 }
 /*/////////////////////////////////////////////*/
+
 
 /*Responsive*/
 @media (min-width: 576px) {
