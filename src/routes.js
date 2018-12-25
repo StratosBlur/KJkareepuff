@@ -3,9 +3,8 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './features/home'
 import Story from './features/story'
 import Register from './features/register';
-import Login from './features/login';
 import Order from './features/order';
-
+import Payment from './features/payment'
 const Routes = () => (
     <BrowserRouter>
       <Switch>
@@ -13,7 +12,7 @@ const Routes = () => (
         <Route path = "/story" component={Story} />
         <Route path = "/order" component={Order} />
         <Route path = "/register" component={Register} />
-        <Route path = "/login" component={Login} />
+        <Route path = "/payment" component={Payment} />
       </Switch>
     </BrowserRouter>
 )

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Login from './login'
 class Register extends React.Component {
   constructor(){
       super()
@@ -78,9 +78,10 @@ class Register extends React.Component {
             <div className="from-group">
               <button type="submit" className="btn btn-primary btn-lg btn-block" 
                 onClick={this.handleSubmit}>สร้างบัญชี</button>
-              <lable className="float-right">มีบัญชีอยู่แล้ว<a href="#">เข้าสู่ระบบ</a></lable>
+              <lable className="float-right">มีบัญชีอยู่แล้ว<a href="#" data-toggle="modal" data-target="#loginModal">เข้าสู่ระบบ</a></lable>
             </div>
         </from>
+        <Login/>
       </div>
     );
   }
