@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import http from '../utils/http'
 
 class Payment extends React.Component {
     constructor(){
@@ -10,14 +11,7 @@ class Payment extends React.Component {
             tel:null,
         }
     }
-    async componentWillMount(){
-        await this.getProduct()
-    }
-    async getProduct(){
-        console.log('getProduct')
-        const res = await axios.get('http://currypuffapi.tk/api/products/all.php');
-        console.log(res.data);
-    }
+    
     render(){
         return(
             <div className="container">

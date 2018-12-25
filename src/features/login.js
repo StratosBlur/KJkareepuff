@@ -11,19 +11,16 @@ class Login extends React.Component {
       this.handleChange = this.handleChange.bind(this)
   }
   handleChange(event) {
+    console.log(event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
     
   }
 
-  handleSubmit(event) {
+  handleSubmit = async(event) => {
     event.preventDefault();
-    console.log("กดแล้วจ้า")
-    // request response
-    // if (response.status==200){
-    //   do something here
-    // }
+    
   }
   
 
@@ -35,9 +32,9 @@ class Login extends React.Component {
             <div className="modal-header">
               <div className="modal-title" id="exampleModalLabel">
                 <h5>สวัสดีค่ะ</h5>
-                <h7>กรุณาลงชื่อเข้าใช้งานเพื่อดำเนินการต่อ คุณมีบัญชีผู้ใช้งานหรือยัง? 
+                <h6>กรุณาลงชื่อเข้าใช้งานเพื่อดำเนินการต่อ คุณมีบัญชีผู้ใช้งานหรือยัง? 
                 <a href="/register">สมัครสมาชิก</a>
-                </h7>
+                </h6>
               </div>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -49,6 +46,7 @@ class Login extends React.Component {
                   <input type="email" 
                     className="form-control" 
                     id="email"
+                    name="email"
                     placeholder="อีเมลล์@คนไทย"
                     value={this.state.email} 
                     onChange={this.handleChange}/>
@@ -57,6 +55,7 @@ class Login extends React.Component {
                   <input type="password" 
                     className="form-control" 
                     id="password"
+                    name="password"
                     placeholder="รหัสผ่าน"
                     value={this.state.password} 
                     onChange={this.handleChange}/>
