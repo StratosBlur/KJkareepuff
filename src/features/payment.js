@@ -43,16 +43,13 @@ class Payment extends React.Component {
 
     handleSubmit() {
         console.log("Fetch submit")
-        const url = "http://currypuffapi.tk/api/orders/add.php"
         const templeteOrderProductField = (order) => `กล่องขนาด${order.OrderProductTemplete.size} ` + ` ${order.numBox} จำนวน ประกอบไปด้วย` +
         ` อกไก่ ${ order.chicken}` + ` ฟักทอง ${order.pumpkin}` + ` อะโวคาโด ${order.avocado }` +  `แปะก๋วย ${order.gingko}` + ` ง่าดำ ${order.ngadum}` + `กล้วย ${order.banana}`
         const OrderProductField = this.state.orderList.map( order => templeteOrderProductField(order))
         
         OrderProductField.forEach(order => {
-            axios.post(url, {
-                OrderProduct: order,
-                OrderAddress: ` ${this.state.name} ${this.state.address} `
-            }).then((res) => {
+        const url = `http://currypuffapi.tk/api/orders/add.php/?OrderProduct=${order}&OrderAddress=${this.state.name} ${this.state.address}`
+            axios.get(url).then((res) => {
                 console.log(res);
             })
         })
