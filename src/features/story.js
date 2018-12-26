@@ -25,8 +25,7 @@ class Story extends React.Component {
                         <img src="../img" 
                         className="img-fluid img-story" alt="Story image"/>
 
-                        <img src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48966391_217629225839244_6526544312006606848_n.png?_nc_cat=111
-                        &_nc_ht=scontent.fbkk7-2.fna&oh=f60686b8b5b505acb8b081d493947aa2&oe=5CCCA4A4" 
+                        <img src="http://currypuffapi.tk/img/story1.jpg" 
                         className="img-fluid img-story" alt="Story image"/>
 
                 </div>

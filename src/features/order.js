@@ -175,7 +175,7 @@ export default class Order extends React.Component {
                                 boxStyle={this.state.boxStyle}
 
                             />
-                        <a href="/payment" ><button className="btn btn-info" onClick={() => this.handlePayment()}>ชำระเงิน</button></a>
+                        <a href="/ชำระเงิน" ><button className="btn btn-info" onClick={() => this.handlePayment()}>ชำระเงิน</button></a>
                         <button type="button" className="btn btn-success" data-toggle="modal" data-target="#cart "onClick={() => this.handleAddToCart()}>ใส่ตะกร้า</button>
                 
             </div>

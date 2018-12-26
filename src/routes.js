@@ -11,12 +11,13 @@ const Routes = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path = "/story" component={Story} />
+        <Route path = "/เรื่องราว" component={Story} />
+        <Route path = "/สินค้า" component={Order} />
         <Route path = "/order" component={Order} />
-        <Route path = "/register" component={Register} />
-        <Route path = "/payment" component={Payment} />
-        <Route path = "/partner" component={Partner}/>
-        <Route path = "/confirmpayment" component={ConfirmPayment}/>
+        <Route path = "/ลงทะเบียน" component={Register} />
+        <Route path = "/ชำระเงิน" component={Payment} />
+        <Route path = "/ร่วมธุรกิจกับเรา" component={Partner}/>
+        <Route path = "/ยืนยันการชำระ" component={ConfirmPayment}/>
       </Switch>
     </BrowserRouter>
 )
