@@ -7,10 +7,10 @@ services:
     volumes:
       - ../:/app
     ports:
-      - "3000:5000"
+      - "5000:5000"
     working_dir: /app
     command: >
      sh -c "rm -Rf build
-      && npm install
-      && yarn build
-      && serve -s build"
+     && npm install
+     && yarn build
+     && serve -s build"
