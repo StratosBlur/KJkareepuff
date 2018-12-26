@@ -176,11 +176,24 @@ export default class Order extends React.Component {
 
                             />
                         <a href="/payment" ><button className="btn btn-info" onClick={() => this.handlePayment()}>ชำระเงิน</button></a>
-                        <button type="button" className="btn btn-success" onClick={() => this.handleAddToCart()}>ใส่ตะกร้า</button>
+                        <button type="button" className="btn btn-success" data-toggle="modal" data-target="#cart "onClick={() => this.handleAddToCart()}>ใส่ตะกร้า</button>
                 
             </div>
             <Element name="flavor">
             </Element>
+
+    <div className="modal fade" id="cart" role="dialog">
+        <div className="modal-dialog modal-sm modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-body">
+                <p>บรรจุสินค้าลงตะกร้าเรียบร้อยค่ะ</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" className="btn btn-default button-booking" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+        </div>
 
         </div>
         )
