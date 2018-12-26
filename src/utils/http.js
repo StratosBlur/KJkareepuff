@@ -9,7 +9,7 @@ class HTTP {
   }
 
   GET(uri, query) {
-
+    
   }
   POST(uri, body, query) {
 

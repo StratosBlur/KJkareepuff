@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Login extends React.Component {
   constructor(){
@@ -17,16 +18,15 @@ class Login extends React.Component {
     
   }
 
-  handleSubmit(event) {
+  handleSubmit = async(event) => {
     event.preventDefault();
-    console.log("กดแล้วจ้า")
-    // request response
-    // if (response.status==200){
-    //   do something here
-    // }
+    const customer = new FormData();
+    customer.append('CustomerEmail', this.state.email)
+    customer.append('CustomerPassword', this.state.password)
+    const res = await axios.post('http://currypuffapi.tk/api/customer/auth.php', customer)
+    console.log(res.data)
   }
   
-
   render() {
     return (
       <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -35,9 +35,9 @@ class Login extends React.Component {
             <div className="modal-header">
               <div className="modal-title" id="exampleModalLabel">
                 <h5>สวัสดีค่ะ</h5>
-                <h7>กรุณาลงชื่อเข้าใช้งานเพื่อดำเนินการต่อ คุณมีบัญชีผู้ใช้งานหรือยัง? 
+                <h6>กรุณาลงชื่อเข้าใช้งานเพื่อดำเนินการต่อ คุณมีบัญชีผู้ใช้งานหรือยัง? 
                 <a href="/register">สมัครสมาชิก</a>
-                </h7>
+                </h6>
               </div>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -49,6 +49,7 @@ class Login extends React.Component {
                   <input type="email" 
                     className="form-control" 
                     id="email"
+                    name="email"
                     placeholder="อีเมลล์@คนไทย"
                     value={this.state.email} 
                     onChange={this.handleChange}/>
@@ -57,6 +58,7 @@ class Login extends React.Component {
                   <input type="password" 
                     className="form-control" 
                     id="password"
+                    name="password"
                     placeholder="รหัสผ่าน"
                     value={this.state.password} 
                     onChange={this.handleChange}/>
@@ -64,7 +66,8 @@ class Login extends React.Component {
               </form>
             </div>
             <div className="modal-footer">
-              <button type="button" class="btn btn-primary btn-lg btn-block" onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block" 
+                onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
             </div>
             <h6 className="float-right"><a href="#">ลืมรหัสผ่าน</a></h6>
         </div>

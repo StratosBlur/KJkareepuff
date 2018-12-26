@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import http from '../utils/http'
 
 class Payment extends React.Component {
     constructor(){
