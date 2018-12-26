@@ -130,7 +130,7 @@ export default class Order extends React.Component {
             <br />
             <div className="row">
                 <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-                <Link to="flavor"><img className="img-box-select" src="https://lh4.googleusercontent.com/NBKrFwnzmzAyr9WA3cTimlMYCQXLkmjbFjXmIRgJl-hOnAc71c0p1ao0V4GQ6UNnALdfTU0rj4rdSSslZCph=w1324-h915" 
+                <Link to="flavor"><img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48940554_1195298543952014_3681802818336849920_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=be0dba04e6582f587345b338450f886e&oe=5C8FDB97" 
                         name="orderedBox" data-toggle="collapse" data-target="#choose-flavor" onClick={() => this.handleChange(1)}/>
                         </Link> 
                 </div>   
