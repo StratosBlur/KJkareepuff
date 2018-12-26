@@ -33,6 +33,26 @@ class Partner extends React.Component {
   render() {
     return (
       <div className="container">
+      <img src="https://bit.ly/2Af7gky" 
+            className="img-fluid" alt="cover image"/>
+      <br/><br/>
+      <h3>ทำไม</h3>
+      <div className="row">
+        <div className="col-4">
+          <img src="https://bit.ly/2GDZHcF" 
+            className="img-fluid" alt="cover image"/>
+        </div>
+        <div className="col-4">
+          <img src="https://bit.ly/2QPubx9" 
+            className="img-fluid" alt="cover image"/>
+        </div>
+        <div className="col-4">
+          <img src="https://bit.ly/2EMXb2d" 
+            className="img-fluid" alt="cover image"/>
+        </div>
+      </div>
+      <br/><br/>
+      
       <h3>มาร่วมธุรกิจกับเรา</h3>
       <h4>ติดต่อเรา</h4>
         <from>
@@ -51,8 +71,8 @@ class Partner extends React.Component {
                     value={this.state.email} 
                     onChange={this.handleChange}
                     />
-                    <label className="float-right">คุณมีอีเมลคนไทยแล้วหรือยัง
-                      <a href="#">ลงทะเบียนอีเมล@คนไทย</a>
+                    <label className="float-right">คุณมีอีเมลคน.ไทยแล้วหรือยัง
+                      <a href="#">ลงทะเบียนอีเมล@คน.ไทย</a>
                     </label>
             </div>
             <div className="form-group">
@@ -84,8 +104,8 @@ class Partner extends React.Component {
               <button type="submit" className="btn btn-primary btn-lg btn-block" 
                 onClick={this.handleSubmit}>ยืนยัน</button>
             </div>
-        </from>
-        <Login/>
+          </from>        
+          <Login/>
       </div>
     );
   }
