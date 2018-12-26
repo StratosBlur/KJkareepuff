@@ -50,7 +50,7 @@ class Payment extends React.Component {
         OrderProductField.forEach(order => {
             axios.post(url, {
                 OrderProduct: order,
-                address: ` ${this.state.name} ${this.state.address} `
+                OrderAddress: ` ${this.state.name} ${this.state.address} `
             }).then((res) => {
                 console.log(res);
             })
@@ -72,7 +72,7 @@ class Payment extends React.Component {
         }
 
         this.setState({
-            total : this.state.total + price
+            total : this.state.total + (price * order.numBox)
         })
 
         return price * order.numBox
@@ -117,10 +117,11 @@ class Payment extends React.Component {
 
                         </div>
                         <div className="row">
-                            <h5>รวม&nbsp;{this.state.total}</h5>
+                            <h5>รวม&nbsp;{ this.state.price.reduce((prev,curr) => { return prev + curr },0) }</h5>
                         </div>
                         
                         <div className="row">
+                        
                                 <div className="form-group">
                                     <input type="text" 
                                         className="form-control" 

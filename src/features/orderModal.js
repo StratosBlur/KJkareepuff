@@ -73,70 +73,86 @@ export default class OrderModal extends React.Component {
                                 <label>เลือกไส้</label>
                             </div>
                         </div>
+
+                            <div className="col-lg-9 col-md-9 col-sm-9">
+                        </div>
                         <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
                                 อกไก่
                             </div>
-                            <div className="col-lg-6 col-md-6 col-sm-6">
+                            <div className="col-lg-7 col-md-7 col-sm-7">
+                                <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddflavor(`chicken`)}}> + </button>
                                     <div className="number-piece">{this.props[`chicken`]} </div>
                                     <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`chicken`)}}> - </button>
+                                    </div>
                             </div>
-
+                        </div>
+                        <br/>
+                        <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
                                 ฟักทอง
                             </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div>
+                            <div className="col-lg-7 col-md-7 col-sm-7">
+                                <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddflavor(`pumpkin`)}}> + </button>
                                     <div className="number-piece">{this.props[`pumpkin`]}  </div>
                                     <button type="button"class="btn btn-append"onClick={() => {this.props.handleChangeRemoveflavor(`pumpkin`)}}> - </button>
                                 </div>
                             </div>
-
+                        </div>
+                        <br/>
+                        <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
                                 อะโวคาโด
                             </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <div>
+                            <div className="col-lg-7 col-md-7 col-sm-7">
+                                <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddflavor(`avocado`)}}> + </button>
                                     <div className="number-piece">{this.props[`avocado`]}  </div>
                                     <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`avocado`)}}> - </button>
                                 </div>
                             </div>
-
+                        </div>
+                        <br/>
+                        <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
                                 แปะก๊วย
                             </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                            <div>
+                            <div className="col-lg-7 col-md-7 col-sm-7">
+                            <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddflavor(`gingko`)}}> + </button>
                                     <div className="number-piece">{this.props[`gingko`]}  </div>
                                 <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`gingko`)}}> - </button>
                                 </div>
                             </div>
-
+                        </div>
+                        <br/>
+                        <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
                                 งาดำ
                             </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                            <div>
+                            <div className="col-lg-7 col-md-7 col-sm-7">
+                            <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddflavor(`ngadum`)}}> + </button>
                                     <div className="number-piece">{this.props[`ngadum`]} </div>
                                 <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`ngadum`)}}> - </button>
                                 </div>
                             </div>
-
+                        </div>
+                        <br/>
+                        <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
                                 กล้วยหอม
                             </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                            <div>
+                            <div className="col-lg-7 col-md-7 col-sm-7">
+                            <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddflavor(`banana`)}}> + </button>
                                     <div className="number-piece">{this.props[`banana`]}  </div>
                                 <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`banana`)}}> - </button>
                                 </div>
                             </div>
+
                         </div>
                         <br/>
                         <div className="row">
@@ -144,7 +160,7 @@ export default class OrderModal extends React.Component {
                                 <label>จำนวนกล่อง</label>
                             </div>
                             <div className="col-lg-9 col-md-9 col-sm-9">
-                                <div>
+                                <div className="row">
                                     <button type="button" onClick={() => {this.props.handleChangeAddNumberOfBox()}}> + </button>
                                     <div className="number-piece">{this.props[`numBox`]}</div>
                                 <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveNumberOfBox()}}> - </button>
@@ -153,7 +169,7 @@ export default class OrderModal extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+</div>
         )
     }
   }

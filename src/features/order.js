@@ -136,21 +136,21 @@ export default class Order extends React.Component {
                 </div>   
    
                 <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-                <Link to="flavor"><img className="img-box-select" src="https://lh3.google.com/u/0/d/1s6qv7yowXIQh4YNORvIWngGmsYS38b0k=w1920-h915-iv1" 
+                <Link to="flavor"><img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412146_346510252741800_8548180281452920832_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=545309a97bf9e170ab5fd78723660b2d&oe=5C9381E8" 
                         name="orderedBox" data-toggle="collapse" data-target="#choose-flavor" onClick={() => this.handleChange(2)}/>
                     </Link>
                 </div>   
 
                 <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
                    <Link to="flavor">
-                    <img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412146_346510252741800_8548180281452920832_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=545309a97bf9e170ab5fd78723660b2d&oe=5C9381E8" 
+                    <img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48417776_525187834651070_488155984179494912_n.png?_nc_cat=102&_nc_ht=scontent.fbkk7-2.fna&oh=f95c880baa2c477adabd555c079d9b30&oe=5CA208EF" 
                         name="orderedBox"  data-toggle="collapse" data-target="#choose-flavor" onClick={() => this.handleChange(5)}/>
                 </Link>
                 </div>  
 
                 <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
                 <Link to="flavor" activeClass="active" smooth={true} duration={500}>
-                    <img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48417776_525187834651070_488155984179494912_n.png?_nc_cat=102&_nc_ht=scontent.fbkk7-2.fna&oh=f95c880baa2c477adabd555c079d9b30&oe=5CA208EF" 
+                    <img className="img-box-select" src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/48415180_367564324046203_4758985198903754752_n.png?_nc_cat=107&_nc_ht=scontent.fbkk7-3.fna&oh=39b9ea912a59831297aab70b9f4a865c&oe=5C90B2E9" 
                         name="orderedBox" data-toggle="collapse" data-target="#choose-flavor" onClick={() => this.handleChange(8)}/>
                 </Link>
                 </div>  
