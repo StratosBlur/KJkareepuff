@@ -3,45 +3,12 @@ import React from 'react';
 export default class OrderModal extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isChooseBox: false,
-            flavorArray: [],
-            numberArray: []
-        }
-        this.toggleChange = this.toggleChange.bind(this)
-    }
-
-    handleChange  = (index) => (event)=> {
-        const flavorArray = this.state.flavorArray
-        let index
-    
-        if (event.target.checked) {
-            flavorArray.push(event.target.value)
-        } else {
-            index = flavorArray.indexOf(event.target.value)
-            flavorArray.splice(index, 1)
-        }
-    
-        this.setState({ flavorArray: flavorArray })
-        console.log(this.state.flavorArray)
-    }
-    
-    toggleChange = (index) => (event)=> {
-        const flavorArray = this.state.flavorArray
-        let sindex
-    
-        if (event.target.checked) {
-            flavorArray.push(event.target.value,index)
-        } else {
-            sindex = flavorArray.indexOf(event.target.value,index)
-            flavorArray.splice(sindex)
-        }
-    
-        this.setState({ flavorArray: flavorArray })
-        console.log(this.state.flavorArray)
+        
+        console.log(this.props);
     }
 
     render() {
+        
         return (
             <div className="modal-body">
                 <h4>สั่งซื้อสินค้า</h4>
@@ -70,7 +37,7 @@ export default class OrderModal extends React.Component {
                                         <img className="img-style-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412075_567016597105618_693586541984874496_n.jpg?_nc_cat=102
                                             &_nc_ht=scontent.fbkk7-2.fna&oh=3f38b9fc24db88c0f55080f6c202ab42&oe=5C99E90C" />
                                         </label>
-                                        <input id="box1" type="checkbox" value="box1" />
+                                        <input id="box1" type="checkbox" onChange={ () => {this.props.handleChangeStyle(`1`)}}/>
                                         <div class="caption"></div>
                                     </div>
                                 </div>
@@ -82,7 +49,7 @@ export default class OrderModal extends React.Component {
                                         <img className="img-style-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412075_567016597105618_693586541984874496_n.jpg?_nc_cat=102
                                             &_nc_ht=scontent.fbkk7-2.fna&oh=3f38b9fc24db88c0f55080f6c202ab42&oe=5C99E90C" />
                                         </label>
-                                        <input id="box2" type="checkbox" value="box2" />
+                                        <input id="box2" type="checkbox" onChange={ () => {this.props.handleChangeStyle(`2`)}}/>
                                         <div class="caption"></div>
                                     </div>
                                 </div>
@@ -94,7 +61,7 @@ export default class OrderModal extends React.Component {
                                         <img className="img-style-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412075_567016597105618_693586541984874496_n.jpg?_nc_cat=102
                                             &_nc_ht=scontent.fbkk7-2.fna&oh=3f38b9fc24db88c0f55080f6c202ab42&oe=5C99E90C" />
                                         </label>
-                                        <input id="box3" type="checkbox" value="box3" />
+                                        <input id="box3" type="checkbox" onChange={ () => {this.props.handleChangeStyle(`3`)}}/>
                                         <div class="caption"></div>
                                     </div>
                                 </div>
@@ -108,45 +75,67 @@ export default class OrderModal extends React.Component {
                         </div>
                         <div className="row">
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
-                                <input type="checkbox" value="chicken" onChange={this.toggleChange(1)} /> อกไก่
+                                อกไก่
                             </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <input className="number-piece" type="number" min="0" max="12" onChange={this.handleChange(1)} />
-                            </div>
-
-                            <div className="col-lg-5 col-md-5 col-sm-5">                                      
-                                <input type="checkbox" value="pumpkin" onChange={this.toggleChange(2)} /> ฟักทอง
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-3">
-                                <input className="number-piece" type="number" min="0" max="12" onChange={this.handleChange(2)} />
+                            <div className="col-lg-6 col-md-6 col-sm-6">
+                                    <button type="button" onClick={() => {this.props.handleChangeAddflavor(`chicken`)}}> + </button>
+                                    <div className="number-piece">{this.props[`chicken`]} </div>
+                                    <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`chicken`)}}> - </button>
                             </div>
 
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
-                                <input type="checkbox" value="avocado" onChange={this.toggleChange(3)} /> อะโวคาโด
+                                ฟักทอง
                             </div>
                             <div className="col-lg-3 col-md-3 col-sm-3">
-                                <input className="number-piece" type="number" min="0" max="12" onChange={this.handleChange(3)} />
+                                <div>
+                                    <button type="button" onClick={() => {this.props.handleChangeAddflavor(`pumpkin`)}}> + </button>
+                                    <div className="number-piece">{this.props[`pumpkin`]}  </div>
+                                    <button type="button"class="btn btn-append"onClick={() => {this.props.handleChangeRemoveflavor(`pumpkin`)}}> - </button>
+                                </div>
                             </div>
 
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
-                                <input type="checkbox" value="gingko" onChange={this.toggleChange(4)} /> แปะก๊วย
+                                อะโวคาโด
                             </div>
                             <div className="col-lg-3 col-md-3 col-sm-3">
-                                <input className="number-piece" type="number" min="0" max="12" onChange={this.handleChange(4)} />
+                                <div>
+                                    <button type="button" onClick={() => {this.props.handleChangeAddflavor(`avocado`)}}> + </button>
+                                    <div className="number-piece">{this.props[`avocado`]}  </div>
+                                    <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`avocado`)}}> - </button>
+                                </div>
                             </div>
 
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
-                                <input type="checkbox" value="ngadum" onChange={this.toggleChange(5)} /> งาดำ
+                                แปะก๊วย
                             </div>
                             <div className="col-lg-3 col-md-3 col-sm-3">
-                                <input className="number-piece" type="number" min="0" max="12" onChange={this.handleChange(5)} />
+                            <div>
+                                    <button type="button" onClick={() => {this.props.handleChangeAddflavor(`gingko`)}}> + </button>
+                                    <div className="number-piece">{this.props[`gingko`]}  </div>
+                                <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`gingko`)}}> - </button>
+                                </div>
                             </div>
 
                             <div className="col-lg-5 col-md-5 col-sm-5">                                      
-                                <input type="checkbox" value="banana" onChange={this.toggleChange(6)} /> กล้วยหอม
+                                งาดำ
                             </div>
                             <div className="col-lg-3 col-md-3 col-sm-3">
-                                <input className="number-piece" type="number" min="0" max="12" onChange={this.handleChange(6)} />
+                            <div>
+                                    <button type="button" onClick={() => {this.props.handleChangeAddflavor(`ngadum`)}}> + </button>
+                                    <div className="number-piece">{this.props[`ngadum`]} </div>
+                                <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`ngadum`)}}> - </button>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-5 col-md-5 col-sm-5">                                      
+                                กล้วยหอม
+                            </div>
+                            <div className="col-lg-3 col-md-3 col-sm-3">
+                            <div>
+                                    <button type="button" onClick={() => {this.props.handleChangeAddflavor(`banana`)}}> + </button>
+                                    <div className="number-piece">{this.props[`banana`]}  </div>
+                                <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveflavor(`banana`)}}> - </button>
+                                </div>
                             </div>
                         </div>
                         <br/>
@@ -155,7 +144,11 @@ export default class OrderModal extends React.Component {
                                 <label>จำนวนกล่อง</label>
                             </div>
                             <div className="col-lg-9 col-md-9 col-sm-9">
-                                <input className="number-box" type="number" min="1" max="100" />
+                                <div>
+                                    <button type="button" onClick={() => {this.props.handleChangeAddNumberOfBox()}}> + </button>
+                                    <div className="number-piece">{this.props[`numBox`]}</div>
+                                <button type="button"class="btn btn-append" onClick={() => {this.props.handleChangeRemoveNumberOfBox()}}> - </button>
+                                </div>
                             </div>
                         </div>
                     </div>

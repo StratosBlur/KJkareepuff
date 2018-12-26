@@ -5,18 +5,77 @@ class Payment extends React.Component {
     constructor(){
         super()
         this.state = {
-            name: null,
-            address: null,
-            tel:null,
+            orderList: [],
+            total: 0,
+            price: [],
+            name: "",
+            address: "",
         }
+
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeAddress = this.handleChangeAddress.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    async componentWillMount(){
-        await this.getProduct()
+
+    componentDidMount() {
+        const orderList = JSON.parse(window.sessionStorage.getItem("orderList"));
+        console.log(orderList);
+        const price = orderList.map( order => this.calculatePrice(order) )
+        this.setState({
+            orderList,
+            price
+        })
+
     }
-    async getProduct(){
-        console.log('getProduct')
-        const res = await axios.get('http://currypuffapi.tk/api/products/all.php');
-        console.log(res.data);
+
+    handleChangeName(e){
+        this.setState({
+            name: e.target.value,
+        })
+    }
+
+    handleChangeAddress(e){
+        this.setState({
+            address: e.target.value,
+        })
+    }
+
+    handleSubmit() {
+        console.log("Fetch submit")
+        const url = "http://currypuffapi.tk/api/orders/add.php"
+        const templeteOrderProductField = (order) => `กล่องขนาด${order.OrderProductTemplete.size} ` + ` ${order.numBox} จำนวน ประกอบไปด้วย` +
+        ` อกไก่ ${ order.chicken}` + ` ฟักทอง ${order.pumpkin}` + ` อะโวคาโด ${order.avocado }` +  `แปะก๋วย ${order.gingko}` + ` ง่าดำ ${order.ngadum}` + `กล้วย ${order.banana}`
+        const OrderProductField = this.state.orderList.map( order => templeteOrderProductField(order))
+        
+        OrderProductField.forEach(order => {
+            axios.post(url, {
+                OrderProduct: order,
+                address: ` ${this.state.name} ${this.state.address} `
+            }).then((res) => {
+                console.log(res);
+            })
+        })
+        
+    }
+
+    calculatePrice(order){
+        const size  = order.OrderProductTemplete.size
+        let price = 0;
+        if(size  ===  1){
+            price = 30.0
+        }else if(size === 2){
+            price = 60.0
+        }else if(size === 5){
+            price = 140.0
+        }else{
+            price = 230.0
+        }
+
+        this.setState({
+            total : this.state.total + price
+        })
+
+        return price * order.numBox
     }
     render(){
         return(
@@ -40,52 +99,34 @@ class Payment extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="row">
-                                <div className="col-4">
-                                    <h5>กล่อง 1 ชิ้น</h5>
+
+                            {this.state.orderList.map((order, index) => (
+                                    <div className="row">
+                                    <div className="col-4">
+                                        <h5>กล่อง&nbsp; {order.OrderProductTemplete.size} &nbsp;ชิ้น</h5>
+                                    </div>
+                                    <div className="col-4">
+                                        <h5>{order.numBox}&nbsp; กล่อง</h5>
+                                    </div>
+                                    <div className="col-4">
+                                        <h5>{ this.state.price[index] }</h5>
+                                    </div>
                                 </div>
-                                <div className="col-4">
-                                    <h5>1 กล่อง</h5>
-                                </div>
-                                <div className="col-4">
-                                    <h5>30.0</h5>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-4">
-                                    <h5>กล่อง 1 ชิ้น</h5>
-                                </div>
-                                <div className="col-4">
-                                    <h5>1 กล่อง</h5>
-                                </div>
-                                <div className="col-4">
-                                    <h5>50.0</h5>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-4">
-                                    <h5>กล่อง 1 ชิ้น</h5>
-                                </div>
-                                <div className="col-4">
-                                    <h5>1 กล่อง</h5>
-                                </div>
-                                <div className="col-4">
-                                    <h5>60.0</h5>
-                                </div>
-                            </div>
+                                ))
+                            }
+
                         </div>
                         <div className="row">
-                            <h5>รวม</h5>
+                            <h5>รวม&nbsp;{this.state.total}</h5>
                         </div>
                         
                         <div className="row">
-                            <form>
                                 <div className="form-group">
                                     <input type="text" 
                                         className="form-control" 
                                         placeholder="ชื่อ-นามสกุล"
                                         value={this.state.name} 
-                                        onChange={this.handleChange} />
+                                        onChange={this.handleChangeName} />
                                 </div>
                                 <div className="form-group">
                                     <textarea name="address" 
@@ -93,21 +134,17 @@ class Payment extends React.Component {
                                         cols="30" 
                                         placeholder="ที่อยู่ในการจัดส่ง"
                                         value={this.state.address}
-                                        onChange={this.handleChange}>
+                                        onChange={this.handleChangeAddress}>
                                     </textarea>
                                 </div>
-                                <div className="form-group">
-                                    <input type="tel" 
-                                        className="form-control" 
-                                        placeholder="ชื่อ-นามสกุล"
-                                        value={this.state.tel} 
-                                        onChange={this.handleChange} />
-                                </div>
+                                
                                 <div className="from-group">
-                                <button type="submit" className="btn btn-primary btn-lg btn-block" 
-                                    onClick={this.handleSubmit}>ยืนยันการสั่งซื้อสินค้า</button>
+                                <button 
+                                    className="btn btn-primary btn-lg"
+                                    onClick={() => this.handleSubmit()}>
+                                    ยืนยันการสั่งซื้อสินค้า
+                                </button>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
