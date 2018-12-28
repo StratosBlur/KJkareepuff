@@ -7,7 +7,7 @@ class Home extends React.Component {
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12">
               <img src="http://currypuffapi.tk/img/DSCF3024.jpg"  
-              className="img-fluid" alt="Responsive image"/>
+              className="img-fluid" alt="Responsive" />
             </div>
           </div>
 
@@ -15,7 +15,7 @@ class Home extends React.Component {
             <div className="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-12 col-sm-push-12 text-content">
             <img src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48966391_217629225839244_6526544312006606848_n.png?_nc_cat=111
                   &_nc_ht=scontent.fbkk7-2.fna&oh=f60686b8b5b505acb8b081d493947aa2&oe=5CCCA4A4" 
-                  className="img-fluid" alt="About image"/>
+                  className="img-fluid" alt="Aboutimage"/>
             </div>
 
             <div className="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-12 col-sm-pull-12 text-content ">
