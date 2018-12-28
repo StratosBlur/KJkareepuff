@@ -1,4 +1,8 @@
 import React from 'react';
+import DSCF3024 from '../assets/img/DSCF3024.jpg';
+import menuchicken from '../assets/img/kareepuff-menu-chicken.jpg'
+import menubanana from '../assets/img/kareepuff-menu-banana.jpg'
+import menugingo from '../assets/img/kareepuff-menu-gingo.jpg'
 
 class Home extends React.Component {
   render() {
@@ -6,7 +10,7 @@ class Home extends React.Component {
       <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12">
-              <img src="http://currypuffapi.tk/img/DSCF3024.jpg"  
+              <img src={DSCF3024}  
               className="img-fluid" alt="Responsive" />
             </div>
           </div>
@@ -29,17 +33,17 @@ class Home extends React.Component {
 
           <div className="row about-content">
             <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-              <img src="http://currypuffapi.tk/img/kareepuff-menu-chicken.jpg" 
+              <img src={menuchicken} 
                   className="img-fluid" alt="karee-img"/>
             </div>
 
             <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-              <img src="http://currypuffapi.tk/img/kareepuff-menu-banana.jpg" 
+              <img src={menubanana}
                   className="img-fluid" alt="karee-img"/>
             </div>
 
             <div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-              <img src="http://currypuffapi.tk/img/kareepuff-menu-gingo.jpg" 
+              <img src={menugingo}
                   className="img-fluid" alt="karee-img"/>
             </div>
           </div>
