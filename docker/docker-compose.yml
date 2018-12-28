@@ -9,7 +9,7 @@ services:
       - ssl_data:/etc/resty-auto-ssl
     environment:
       ALLOWED_DOMAINS: 'xn--42c5b3a1dc8kd.xn--12cbst6ea8c2a3bzchh4cwm3c8a.xn--o3cw4h'
-      SITES: 'xn--42c5b3a1dc8kd.xn--12cbst6ea8c2a3bzchh4cwm3c8a.xn--o3cw4h=web-production:80'
+      SITES: 'xn--42c5b3a1dc8kd.xn--12cbst6ea8c2a3bzchh4cwm3c8a.xn--o3cw4h=web-production:5000'
   web-production:
     build: node/
     container_name: kj-web
