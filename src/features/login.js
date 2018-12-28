@@ -5,8 +5,8 @@ class Login extends React.Component {
   constructor() {
     super()
     this.state = {
-      email: null,
-      password: null,
+      email: '',
+      password: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -29,7 +29,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -39,7 +39,7 @@ class Login extends React.Component {
                 <a href="/register">สมัครสมาชิก</a>
                 </h6>
               </div>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -54,7 +54,7 @@ class Login extends React.Component {
                     value={this.state.email}
                     onChange={this.handleChange} />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input type="password"
                     className="form-control"
                     id="password"
@@ -66,7 +66,7 @@ class Login extends React.Component {
               </form>
             </div>
             <div className="modal-footer">
-              <button type="button" class="btn btn-primary btn-lg btn-block"
+              <button className="btn btn-primary btn-lg btn-block"
                 onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
             </div>
             <h6 className="float-right"><a href="#s">ลืมรหัสผ่าน</a></h6>

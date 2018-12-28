@@ -1,4 +1,6 @@
 import React from 'react';
+import image1 from '../assets/img/story1.jpg';
+import image2 from '../assets/img/story2.jpg';
 
 class Story extends React.Component {
 	render() {
@@ -21,13 +23,10 @@ class Story extends React.Component {
 					</div>
 
 					<div className="col-lg-7 col-md-7 col-sm-7 story-image-content">
-
-						<img src="../img"
+						<img src={image2}
 							className="img-fluid img-story" alt="Storyimage" />
-
-						<img src="http://currypuffapi.tk/img/story1.jpg"
+						<img src={image1}
 							className="img-fluid img-story" alt="Storyimage" />
-
 					</div>
 				</div>
 			</div>

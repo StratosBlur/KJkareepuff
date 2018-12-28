@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderModal from './orderModal'
+import OrderCollape from './orderCollape'
 import { Link, Element } from "react-scroll";
 
 export default class Order extends React.Component {
@@ -164,7 +164,7 @@ export default class Order extends React.Component {
 				</Element>
 
 				<div className="collapse" id="choose-flavor" >
-					<OrderModal
+					<OrderCollape
 						handleChangeAddflavor={this.handleChangeAddflavor}
 						handleChangeRemoveflavor={this.handleChangeRemoveflavor}
 						handleChangeAddNumberOfBox={this.handleChangeAddNumberOfBox}
@@ -194,7 +194,7 @@ export default class Order extends React.Component {
 							<div className="modal-body">
 								<p>บรรจุสินค้าลงตะกร้าเรียบร้อยค่ะ</p>
 							</div>
-							<div class="modal-footer">
+							<div className="modal-footer">
 								<button type="button" className="btn btn-default button-booking" data-dismiss="modal">Close</button>
 							</div>
 						</div>
