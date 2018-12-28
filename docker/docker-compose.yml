@@ -1,5 +1,15 @@
 version: '2'
 services:
+  nginx:
+    image: valian/docker-nginx-auto-ssl
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ssl_data:/etc/resty-auto-ssl
+    environment:
+      ALLOWED_DOMAINS: 'xn--42c5b3a1dc8kd.xn--12cbst6ea8c2a3bzchh4cwm3c8a.xn--o3cw4h'
+      SITES: 'xn--42c5b3a1dc8kd.xn--12cbst6ea8c2a3bzchh4cwm3c8a.xn--o3cw4h=web-production:80'
   web-production:
     build: node/
     container_name: kj-web
@@ -7,10 +17,12 @@ services:
     volumes:
       - ../:/app
     ports:
-      - "5000:5000"
+      - "80:5000"
     working_dir: /app
     command: >
      sh -c "rm -Rf build
      && npm install
      && yarn build
      && serve -s build"
+volumes:
+  ssl_data:
