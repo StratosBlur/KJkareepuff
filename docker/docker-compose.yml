@@ -2,7 +2,7 @@ version: '2'
 services:
   web-production:
     build: node/
-    container_name: excalibur-api-node
+    container_name: kj-web
     tty: true
     volumes:
       - ../:/app
