@@ -98,6 +98,11 @@ html {
   margin-bottom: 10%;
 }
 
+.product-caption {
+  background-color:#ffffffbf ;
+  border-radius:8px ;
+  left:0%;
+}
 .story-content {
   margin-top: -2%; 
   margin-bottom: -50px;
@@ -153,9 +158,18 @@ html {
   width: 80px;
 }
 
+.order-collapse{ 
+  margin-bottom: 10%;
+}
+
+.payment-option {
+  margin-left: 40%;
+  /* margin-right: auto; */
+}
+
 /*checkbox image on order page*/
 .img-style-select{
-  height: 60px;
+  height: 100px;
   width: 100px;
 } 
 

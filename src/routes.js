@@ -13,7 +13,6 @@ const Routes = () => (
         <Route exact path="/" component={Home} />
         <Route path = "/เรื่องราว" component={Story} />
         <Route path = "/สินค้า" component={Order} />
-        <Route path = "/order" component={Order} />
         <Route path = "/ลงทะเบียน" component={Register} />
         <Route path = "/ชำระเงิน" component={Payment} />
         <Route path = "/ร่วมธุรกิจกับเรา" component={Partner}/>

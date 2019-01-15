@@ -163,7 +163,7 @@ export default class Order extends React.Component {
 				<Element name="flavor">
 				</Element>
 
-				<div className="collapse" id="choose-flavor" >
+				<div className="collapse order-collapse" id="choose-flavor" >
 					<OrderCollape
 						handleChangeAddflavor={this.handleChangeAddflavor}
 						handleChangeRemoveflavor={this.handleChangeRemoveflavor}
@@ -181,10 +181,9 @@ export default class Order extends React.Component {
 						boxStyle={this.state.boxStyle}
 
 					/>
-					<a href="/payment" ><button className="btn btn-info" onClick={() => this.handlePayment()}>ชำระเงิน</button></a>
-					<button type="button" className="btn btn-success" data-toggle="modal" data-target="#cart " onClick={() => this.handleAddToCart()}>ใส่ตะกร้า</button>
-
+					<br />
 				</div>
+
 				<Element name="flavor">
 				</Element>
 

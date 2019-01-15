@@ -36,7 +36,7 @@ class Login extends React.Component {
               <div className="modal-title" id="exampleModalLabel">
                 <h5>สวัสดีค่ะ</h5>
                 <h6>กรุณาลงชื่อเข้าใช้งานเพื่อดำเนินการต่อ คุณมีบัญชีผู้ใช้งานหรือยัง?
-                <a href="/register">สมัครสมาชิก</a>
+                <a href="/ลงทะเบียน">สมัครสมาชิก</a>
                 </h6>
               </div>
               <button className="close" data-dismiss="modal" aria-label="Close">
