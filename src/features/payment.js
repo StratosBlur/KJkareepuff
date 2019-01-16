@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import preview_img from '../assets/img/section_img2.jpg'
 
 class Payment extends React.Component {
 	constructor() {
@@ -78,65 +79,52 @@ class Payment extends React.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-6">
+					<div className="col-lg-5 col-md-5 col-sm-12">
 						<h2>ยืนยันการสั่งซื้อสินค้า</h2>
-						<img src="https://bit.ly/2QS3qZ2" className="img-fluid" alt="Productimage" />
+						<img src={preview_img} className="img-fluid" alt="Productimage" />
 					</div>
-					<div className="col-6">
-						<div className="row">
-							<div className="row">
-								<div className="col-4">
-									<h5>รายการสินค้า</h5>
-								</div>
-								<div className="col-4">
-									<h5>จำนวนที่สั่ง</h5>
-								</div>
-								<div className="col-4">
-									<h5>ราคา</h5>
-								</div>
-							</div>
-
-
-							{this.state.orderList.map((order, index) => (
-								<div className="row">
-									<div className="col-4">
-										<h5>กล่อง&nbsp; {order.OrderProductTemplete.size} &nbsp;ชิ้น</h5>
-									</div>
-									<div className="col-4">
-										<h5>{order.numBox}&nbsp; กล่อง</h5>
-									</div>
-									<div className="col-4">
-										<h5>{this.state.price[index]}</h5>
-									</div>
-								</div>
-							))
-							}
-
+					<div className="col-lg-7 col-md-7 col-sm-12">
+						<div className="payment-bill-table">
+							<table className="table table-condensed">
+								<tr>
+									<td className="text-center"><strong>รายการสินค้า</strong></td>
+									<td className="text-center"><strong>จำนวนที่สั่ง</strong></td>
+									<td className="text-center"><strong>ราคา</strong></td>
+								</tr>
+								{this.state.orderList.map((order, index) => (
+									<tbody>
+										<tr>
+											<td className="text-center">กล่อง&nbsp; {order.OrderProductTemplete.size} &nbsp;ชิ้น</td>
+											<td className="text-center">{order.numBox}</td>
+											<td className="text-center">{this.state.price[index]}</td>
+										</tr>
+									</tbody>
+								))}
+								<tr>
+									<td className="text-center">รวม</td>
+									<td></td>
+									<td className="text-center">{this.state.price.reduce((prev, curr) => { return prev + curr }, 0)}</td>
+								</tr>
+							</table>
 						</div>
-						<div className="row">
-							<h5>รวม&nbsp;{this.state.price.reduce((prev, curr) => { return prev + curr }, 0)}</h5>
-						</div>
-
-						<div className="row">
-
-							<div className="form-group">
+						<div className="contact-form">
+							<div className="row form-group">
 								<input type="text"
-									className="form-control"
 									placeholder="ชื่อ-นามสกุล"
 									value={this.state.name}
 									onChange={this.handleChangeName} />
 							</div>
-							<div className="form-group">
+							<div className="row form-group">
 								<textarea name="address"
 									rows="5"
-									cols="30"
+									cols="40"
 									placeholder="ที่อยู่ในการจัดส่ง"
 									value={this.state.address}
 									onChange={this.handleChangeAddress}>
 								</textarea>
 							</div>
 
-							<div className="from-group">
+							<div className="row form-group">
 								<button
 									className="btn btn-primary btn-lg"
 									onClick={() => this.handleSubmit()}>

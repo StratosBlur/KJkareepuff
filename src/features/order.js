@@ -27,6 +27,7 @@ export default class Order extends React.Component {
 		this.handleChangeRemoveNumberOfBox = this.handleChangeRemoveNumberOfBox.bind(this);
 		this.handleChangeStyle = this.handleChangeStyle.bind(this);
 		this.handlePayment = this.handlePayment.bind(this);
+		this.handleAddToCart = this.handleAddToCart.bind(this);
 	}
 
 
@@ -51,7 +52,7 @@ export default class Order extends React.Component {
 	handleChangeAddflavor(flavor) {
 		console.log("Size", this.state.OrderProductTemplete.size)
 		console.log('Flavor', this.state[flavor]);
-		if (this.state.OrderProductTemplete.size <= this.state[flavor]) {
+		if (this.state.OrderProductTemplete.size >= this.state[flavor]) {
 			const originalNumFlavor = this.state[flavor];
 			this.setState({
 				[flavor]: originalNumFlavor + 1,
@@ -170,6 +171,8 @@ export default class Order extends React.Component {
 						handleChangeAddNumberOfBox={this.handleChangeAddNumberOfBox}
 						handleChangeRemoveNumberOfBox={this.handleChangeRemoveNumberOfBox}
 						handleChangeStyle={this.handleChangeStyle}
+						handleAddToCart={this.handleAddToCart}
+						handlePayment={this.handlePayment}
 						orderedBox={this.state.orderedBox}
 						chicken={this.state.chicken}
 						pumpkin={this.state.pumpkin}
@@ -186,19 +189,6 @@ export default class Order extends React.Component {
 
 				<Element name="flavor">
 				</Element>
-
-				<div className="modal fade" id="cart" role="dialog">
-					<div className="modal-dialog modal-sm modal-dialog-centered">
-						<div className="modal-content">
-							<div className="modal-body">
-								<p>บรรจุสินค้าลงตะกร้าเรียบร้อยค่ะ</p>
-							</div>
-							<div className="modal-footer">
-								<button type="button" className="btn btn-default button-booking" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
 
 			</div>
 		)
