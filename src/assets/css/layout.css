@@ -94,8 +94,27 @@ html {
   padding-bottom: 2%;
 }
 
+.box-caption {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .product-preview {
   margin-bottom: 10%;
+}
+
+.product-preview:hover .img-box-select {
+  opacity: 0.6;
+}
+
+.product-preview:hover .box-caption {
+  opacity: 1;
 }
 
 .product-caption {
@@ -160,6 +179,9 @@ html {
 
 .order-collapse{ 
   margin-bottom: 10%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .payment-option {
@@ -175,7 +197,23 @@ html {
   background-color: #f7f7f7;
 }
 
-/*checkbox image on order page*/
+.flavor-line{
+  margin-bottom: 5%;
+  margin-top: 7%;
+}
+.flavor-text {
+  width: 120px; 
+}
+
+.flavor-number {
+  background-color: rgb(236, 236, 236)
+}
+
+.number-box-text {
+  width: 150px; 
+}
+
+/*image on order page*/
 .img-style-select{
   height: 100px;
   width: 100px;
@@ -184,6 +222,8 @@ html {
 .img-box-select {
   height: 200px;
   width: 200px;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
 .caption {
