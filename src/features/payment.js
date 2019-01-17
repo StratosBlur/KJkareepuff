@@ -43,7 +43,7 @@ class Payment extends React.Component {
 
 	handleSubmit() {
 		console.log("Fetch submit")
-		const templeteOrderProductField = (order) => `กล่องขนาด${order.OrderProductTemplete.size} ${order.numBox} จำนวน ประกอบไปด้วย` +
+		const templeteOrderProductField = (order) => `กล่องขนาด${order.OrderProductTemplete.size} แบบรูปแบบกล่องแบบที่${order.boxStyle} ${order.numBox} จำนวน ประกอบไปด้วย` +
 			` อกไก่ ${order.chicken} ฟักทอง ${order.pumpkin} อะโวคาโด ${order.avocado} แปะก๋วย ${order.gingko} ง่าดำ ${order.ngadum} กล้วย ${order.banana}`
 		const OrderProductField = this.state.orderList.map(order => templeteOrderProductField(order))
 

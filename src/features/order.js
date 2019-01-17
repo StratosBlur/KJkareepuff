@@ -20,7 +20,8 @@ export default class Order extends React.Component {
 				size: 0,
 				OrderAddress: "",
 			},
-			showOrderMenu: false
+			showOrderMenu: false,
+			totalNumFlavor: 0
 		}
 		this.handleChangeAddflavor = this.handleChangeAddflavor.bind(this);
 		this.handleChangeRemoveflavor = this.handleChangeRemoveflavor.bind(this);
@@ -46,9 +47,9 @@ export default class Order extends React.Component {
 	}
 
 	handleChangeStyle(style) {
-		const originalStyle = this.state[style];
+		const originalStyle = style;
 		this.setState({
-			boxStyle: originalStyle,
+			boxStyle: originalStyle
 		})
 	}
 
@@ -57,18 +58,25 @@ export default class Order extends React.Component {
 		console.log('Flavor', this.state[flavor]);
 		if (this.state.OrderProductTemplete.size >= this.state[flavor]) {
 			const originalNumFlavor = this.state[flavor];
-			this.setState({
-				[flavor]: originalNumFlavor + 1,
-			})
+			const originalTotalNumFlavor = this.state.totalNumFlavor;
+			if(this.state.totalNumFlavor < this.state.OrderProductTemplete.size){
+				this.setState({
+					[flavor]: originalNumFlavor + 1,
+					totalNumFlavor: originalTotalNumFlavor + 1
+				})
+			}
 		}
-
 	}
 
 	handleChangeRemoveflavor(flavor) {
 		const originalNumFlavor = this.state[flavor];
-		this.setState({
-			[flavor]: originalNumFlavor - 1,
-		})
+		const originalTotalNumFlavor = this.state.totalNumFlavor;
+		if(this.state[flavor] > 0) {
+			this.setState({
+				[flavor]: originalNumFlavor - 1,
+				totalNumFlavor: originalTotalNumFlavor - 1
+			})
+		}
 	}
 
 	handleChangeAddNumberOfBox() {
@@ -126,6 +134,7 @@ export default class Order extends React.Component {
 		this.setState({
 			orderList: originalOrderList
 		})
+		console.log("boxStyle ", this.state.orderList.boxStyle)
 		console.log("order ", this.state.orderList)
 		window.sessionStorage.setItem("orderList", JSON.stringify(this.state.orderList));
 	}
@@ -136,8 +145,8 @@ export default class Order extends React.Component {
 				<h2>เลือกขนาดที่คุณต้องการ</h2>
 				<br />
 				<div className="row">
-					<div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-						<Link to="flavor">
+					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
+						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
 							<img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48940554_1195298543952014_3681802818336849920_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=be0dba04e6582f587345b338450f886e&oe=5C8FDB97"
 								name="orderedBox"  onClick={() => this.handleChange(1)} alt="noimage" />
 							<div className="box-caption" onClick={() => this.handleChange(1)}>
@@ -146,8 +155,8 @@ export default class Order extends React.Component {
 						</Link>
 					</div>
 
-					<div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-						<Link to="flavor">
+					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
+						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
 							<img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412146_346510252741800_8548180281452920832_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=545309a97bf9e170ab5fd78723660b2d&oe=5C9381E8"
 							name="orderedBox"  onClick={() => this.handleChange(2)} alt="noimage" />
 							<div className="box-caption" onClick={() => this.handleChange(2)}>
@@ -156,8 +165,8 @@ export default class Order extends React.Component {
 						</Link>
 					</div>
 
-					<div className="col-lg-4 col-md-4 col-sm-4 product-preview">
-						<Link to="flavor">
+					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
+						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
 							<img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48417776_525187834651070_488155984179494912_n.png?_nc_cat=102&_nc_ht=scontent.fbkk7-2.fna&oh=f95c880baa2c477adabd555c079d9b30&oe=5CA208EF"
 								name="orderedBox" onClick={() => this.handleChange(5)} alt="noimage" />							
 							<div className="box-caption" onClick={() => this.handleChange(5)}>
@@ -166,7 +175,7 @@ export default class Order extends React.Component {
 						</Link>
 					</div>
 
-					<div className="col-lg-4 col-md-4 col-sm-4 product-preview">
+					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
 						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
 							<img className="img-box-select" src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/48415180_367564324046203_4758985198903754752_n.png?_nc_cat=107&_nc_ht=scontent.fbkk7-3.fna&oh=39b9ea912a59831297aab70b9f4a865c&oe=5C90B2E9"
 								name="orderedBox" onClick={() => this.handleChange(8)} alt="noimage" />
@@ -190,7 +199,6 @@ export default class Order extends React.Component {
 						handleChangeStyle={this.handleChangeStyle}
 						handleAddToCart={this.handleAddToCart}
 						handlePayment={this.handlePayment}
-						orderedBox={this.state.orderedBox}
 						chicken={this.state.chicken}
 						pumpkin={this.state.pumpkin}
 						avocado={this.state.avocado}
