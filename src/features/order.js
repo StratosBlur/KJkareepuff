@@ -13,7 +13,7 @@ export default class Order extends React.Component {
 			gingko: 0,
 			ngadum: 0,
 			banana: 0,
-			numBox: 0,
+			numBox: 1,
 			boxStyle: 1,
 			orderList: [],
 			OrderProductTemplete: {
@@ -90,9 +90,11 @@ export default class Order extends React.Component {
 
 	handleChangeRemoveNumberOfBox() {
 		const originalNumBox = this.state.numBox;
-		this.setState({
-			numBox: originalNumBox - 1,
-		})
+		if(this.state.numBox > 1){
+			this.setState({
+				numBox: originalNumBox - 1,
+			})
+		}
 	}
 
 	handleAddToCart() {
