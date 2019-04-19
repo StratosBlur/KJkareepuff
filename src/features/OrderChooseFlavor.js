@@ -190,7 +190,6 @@ export default class OrderChooseFlavor extends React.Component {
 						</div>
 					</div>
 				</div>
-
 			</div>
 		)
 	}
