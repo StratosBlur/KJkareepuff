@@ -1,11 +1,14 @@
 import React from 'react';
+import box1 from '../assets/img/Box-theme-pink.png'
+import box2 from '../assets/img/Box-theme-blue.png'
+import box3 from '../assets/img/Box-theme-purple.png'
 
 export default class OrderChooseFlavor extends React.Component {
 
 	render() {
 
 		return (
-			<div className="card card-body ">
+			<div className="card card-body">
 				<h4>สั่งซื้อสินค้า</h4>
 				<br />
 				<br />
@@ -34,7 +37,7 @@ export default class OrderChooseFlavor extends React.Component {
 									<div className="grid-two imageandtext">
 										<div className="imageandtext image_grid">
 											<label htmlFor="box1">
-												<img className="img-style-select" src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/49087675_304827590155183_401384076998606848_n.png?_nc_cat=100&_nc_ht=scontent.fbkk7-3.fna&oh=caf35a1071d03cd25d8a6d7d0e0ee995&oe=5C903306" alt="noimage" />
+												<img className="img-style-select" src={box1} alt="noimage" />
 											</label>
 											<input id="box1" name="boxStyle" type="radio" onChange={() => { this.props.handleChangeStyle(1) }} />
 											<div className="caption">แบบที่ 1</div>
@@ -45,7 +48,7 @@ export default class OrderChooseFlavor extends React.Component {
 									<div className="grid-two imageandtext">
 										<div className="imageandtext image_grid">
 											<label htmlFor="box2">
-												<img className="img-style-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/49132501_319385112008437_1916481305885802496_n.png?_nc_cat=104&_nc_ht=scontent.fbkk7-2.fna&oh=022b0f672c95852d1910bede9f2dce46&oe=5C8F798C" alt="noimage" />
+												<img className="img-style-select" src={box2} alt="noimage" />
 											</label>
 											<input id="box2" name="boxStyle" type="radio" onChange={() => { this.props.handleChangeStyle(2) }} />
 											<div className="caption">แบบที่ 2</div>
@@ -56,7 +59,7 @@ export default class OrderChooseFlavor extends React.Component {
 									<div className="grid-two imageandtext">
 										<div className="imageandtext image_grid">
 											<label htmlFor="box3">
-												<img className="img-style-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/49051426_214893809395463_494788779484119040_n.png?_nc_cat=102&_nc_ht=scontent.fbkk7-2.fna&oh=72f58af1345dff086b31d7900e24fb26&oe=5CA0D035" alt="noimage" />
+												<img className="img-style-select" src={box3} alt="noimage" />
 											</label>
 											<input id="box3" name="boxStyle" type="radio" onChange={() => { this.props.handleChangeStyle(3) }} />
 											<div className="caption">แบบที่ 3</div>

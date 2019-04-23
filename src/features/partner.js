@@ -1,5 +1,6 @@
 import React from 'react';
-import Login from './login'
+import Login from './login';
+import coverPartner from '../assets/img/cover-kareepuff.jpg';
 class Partner extends React.Component {
   constructor() {
     super()
@@ -29,29 +30,17 @@ class Partner extends React.Component {
   render() {
     return (
       <div className="container">
-        <img src="https://bit.ly/2Af7gky"
+        <img src={coverPartner}
           className="img-fluid" alt="coverimage" />
         <br /><br />
-        <h3>ทำไม</h3>
-        <div className="row">
-          <div className="col-4">
-            <img src="https://bit.ly/2GDZHcF"
-              className="img-fluid" alt="coverimage" />
-          </div>
-          <div className="col-4">
-            <img src="https://bit.ly/2QPubx9"
-              className="img-fluid" alt="coverimage" />
-          </div>
-          <div className="col-4">
-            <img src="https://bit.ly/2EMXb2d"
-              className="img-fluid" alt="coverimage" />
-          </div>
-        </div>
         <br /><br />
 
         <h3>มาร่วมธุรกิจกับเรา</h3>
         <h4>ติดต่อเรา</h4>
-        <from>
+        <br /><br />
+        <br /><br />
+        <div className="partner-form">
+        <form>
           <div className="form-group">
             <input type="text"
               className="form-control"
@@ -100,7 +89,8 @@ class Partner extends React.Component {
             <button type="submit" className="btn btn-primary btn-lg btn-block"
               onClick={this.handleSubmit}>ยืนยัน</button>
           </div>
-        </from>
+        </form>
+        </div>
         <Login />
       </div>
     );

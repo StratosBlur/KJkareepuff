@@ -1,6 +1,10 @@
 import React from 'react';
 import OrderChooseFlavor from './OrderChooseFlavor'
 import { Link, Element } from "react-scroll";
+import kareepuff1 from '../assets/img/kareepuff-1.png';
+import kareepuff2 from '../assets/img/kareepuff-2.png';
+import kareepuff5 from '../assets/img/kareepuff-5.png';
+import kareepuff8 from '../assets/img/kareepuff-8.png';
 
 export default class Order extends React.Component {
 	constructor(props) {
@@ -149,7 +153,7 @@ export default class Order extends React.Component {
 				<div className="row">
 					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
 						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
-							<img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48940554_1195298543952014_3681802818336849920_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=be0dba04e6582f587345b338450f886e&oe=5C8FDB97"
+							<img className="img-box-select" src={kareepuff1}
 								name="orderedBox"  onClick={() => this.handleChange(1)} alt="noimage" />
 							<div className="box-caption" onClick={() => this.handleChange(1)}>
 								<h5>ความจุ 1 ชิ้น</h5>
@@ -159,7 +163,7 @@ export default class Order extends React.Component {
 
 					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
 						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
-							<img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48412146_346510252741800_8548180281452920832_n.png?_nc_cat=109&_nc_ht=scontent.fbkk7-2.fna&oh=545309a97bf9e170ab5fd78723660b2d&oe=5C9381E8"
+							<img className="img-box-select" src={kareepuff2}
 							name="orderedBox"  onClick={() => this.handleChange(2)} alt="noimage" />
 							<div className="box-caption" onClick={() => this.handleChange(2)}>
 								<h5>ความจุ 2 ชิ้น</h5>
@@ -169,7 +173,7 @@ export default class Order extends React.Component {
 
 					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
 						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
-							<img className="img-box-select" src="https://scontent.fbkk7-2.fna.fbcdn.net/v/t1.15752-9/48417776_525187834651070_488155984179494912_n.png?_nc_cat=102&_nc_ht=scontent.fbkk7-2.fna&oh=f95c880baa2c477adabd555c079d9b30&oe=5CA208EF"
+							<img className="img-box-select" src={kareepuff5}
 								name="orderedBox" onClick={() => this.handleChange(5)} alt="noimage" />							
 							<div className="box-caption" onClick={() => this.handleChange(5)}>
 								<h5>ความจุ 5 ชิ้น</h5>
@@ -179,7 +183,7 @@ export default class Order extends React.Component {
 
 					<div className="col-lg-3 col-md-3 col-sm-3 product-preview">
 						<Link to="flavor" activeClass="active" smooth={true} duration={500}>
-							<img className="img-box-select" src="https://scontent.fbkk7-3.fna.fbcdn.net/v/t1.15752-9/48415180_367564324046203_4758985198903754752_n.png?_nc_cat=107&_nc_ht=scontent.fbkk7-3.fna&oh=39b9ea912a59831297aab70b9f4a865c&oe=5C90B2E9"
+							<img className="img-box-select" src={kareepuff8}
 								name="orderedBox" onClick={() => this.handleChange(8)} alt="noimage" />
 							<div className="box-caption" onClick={() => this.handleChange(8)}>
 								<h5>ความจุ 8 ชิ้น</h5>
